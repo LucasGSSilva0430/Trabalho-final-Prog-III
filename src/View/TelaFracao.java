@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorFracao;
+
 /**
  *
  * @author Discentes
@@ -15,6 +17,7 @@ public class TelaFracao extends javax.swing.JPanel {
      */
     public TelaFracao() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -56,6 +59,7 @@ public class TelaFracao extends javax.swing.JPanel {
         jLabel3.setText("--------------------------");
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
         jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setText("...");
@@ -165,6 +169,10 @@ public class TelaFracao extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -183,4 +191,10 @@ public class TelaFracao extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorFracao c;
+    public void inicio(){
+        c = new ControladorFracao(jLabelTotal, jTextField1, jTextField2);
+    }
+    
 }
