@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorRegraDe3;
+
 /**
  *
  * @author Discentes
@@ -15,6 +17,7 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
      */
     public TelaRegraDe3() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -46,6 +49,7 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
         jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setText("...");
@@ -176,6 +180,10 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -195,4 +203,9 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+ControladorRegraDe3 c;
+public void inicio(){
+    c = new ControladorRegraDe3(jTextField1, jTextField2, jTextField3, jLabelTotal);
+}
+
 }
