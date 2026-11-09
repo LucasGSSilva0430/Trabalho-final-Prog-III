@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorLogaritmo;
+
 /**
  *
  * @author Usuário
@@ -15,6 +17,7 @@ public class TelaLog extends javax.swing.JPanel {
      */
     public TelaLog() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -54,6 +57,7 @@ public class TelaLog extends javax.swing.JPanel {
         jTextFieldP.addActionListener(this::jTextFieldPActionPerformed);
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
         jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setText("...");
@@ -185,6 +189,10 @@ public class TelaLog extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPActionPerformed
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -206,4 +214,10 @@ public class TelaLog extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldN;
     private javax.swing.JTextField jTextFieldP;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorLogaritmo c;
+    public void inicio(){
+        c = new ControladorLogaritmo(jLabelTotal, jTextFieldP, jTextFieldN);
+    }
+    
 }

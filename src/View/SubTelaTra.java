@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorTra;
+
 /**
  *
  * @author Usuário
@@ -15,6 +17,7 @@ public class SubTelaTra extends javax.swing.JPanel {
      */
     public SubTelaTra() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -37,14 +40,15 @@ public class SubTelaTra extends javax.swing.JPanel {
 
         jLabelA.setText("Altura");
 
-        jLabelBI.setText("Base I");
+        jLabelBI.setText("Base B");
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
         jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setText("...");
 
-        jLabelBII.setText(" Base II");
+        jLabelBII.setText(" Base b");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,6 +96,10 @@ public class SubTelaTra extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -103,4 +111,10 @@ public class SubTelaTra extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldBI;
     private javax.swing.JTextField jTextFieldBII;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorTra c;
+    public void inicio(){
+        c = new ControladorTra(jLabelTotal, jTextFieldBI, jTextFieldBII, jTextFieldA);
+    }
+    
 }

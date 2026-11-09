@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorPotenciacao;
+
 /**
  *
  * @author Discentes
@@ -15,6 +17,7 @@ public class TelaPotenciacao extends javax.swing.JPanel {
      */
     public TelaPotenciacao() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -56,6 +59,7 @@ public class TelaPotenciacao extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
         jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setText("...");
@@ -199,6 +203,10 @@ public class TelaPotenciacao extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -221,4 +229,10 @@ public class TelaPotenciacao extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldN;
     private javax.swing.JTextField jTextFieldP;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorPotenciacao c;
+    public void inicio(){
+        c = new ControladorPotenciacao(jLabelTotal, jTextFieldN, jTextFieldP);
+    }
+    
 }

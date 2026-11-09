@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorPR;
+
 /**
  *
  * @author Usuário
@@ -15,6 +17,7 @@ public class SubTelaPR extends javax.swing.JPanel {
      */
     public SubTelaPR() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -38,6 +41,7 @@ public class SubTelaPR extends javax.swing.JPanel {
         jLabelTL.setText("<html>Tamanho de um lado</html>");
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
         jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal.setText("...");
@@ -84,6 +88,10 @@ public class SubTelaPR extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -93,4 +101,10 @@ public class SubTelaPR extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldQtdL;
     private javax.swing.JTextField jTextFieldTL;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorPR c;
+    public void inicio(){
+        c = new ControladorPR(jLabelTotal, jTextFieldQtdL, jTextFieldTL);
+    }
+    
 }

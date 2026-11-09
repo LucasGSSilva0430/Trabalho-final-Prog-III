@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorJurosCompostos;
+
 /**
  *
  * @author Discentes
@@ -15,6 +17,7 @@ public class TelaJurosComposto extends javax.swing.JPanel {
      */
     public TelaJurosComposto() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -54,6 +57,7 @@ public class TelaJurosComposto extends javax.swing.JPanel {
         jTextFieldJ6.addActionListener(this::jTextFieldJ6ActionPerformed);
 
         jButtonCalcular6.setText("Calcular");
+        jButtonCalcular6.addActionListener(this::jButtonCalcular6ActionPerformed);
 
         jLabelTotal6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotal6.setText("...");
@@ -216,6 +220,10 @@ public class TelaJurosComposto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldJ6ActionPerformed
 
+    private void jButtonCalcular6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcular6ActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcular6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular6;
@@ -241,4 +249,10 @@ public class TelaJurosComposto extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldJ6;
     private javax.swing.JTextField jTextFieldT6;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorJurosCompostos c;
+    public void inicio(){
+        c = new ControladorJurosCompostos(jLabelTotal6, jTextFieldC6, jTextFieldJ6, jTextFieldT6);
+    }
+    
 }

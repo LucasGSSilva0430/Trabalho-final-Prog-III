@@ -27,7 +27,7 @@ public class ControladorRegraDe3 {
         int v2 = Integer.parseInt(jTextField2.getText());
         int v3 = Integer.parseInt(jTextField3.getText());
         int parte1 = v2*v3;
-        float t = parte1/v1;
+        float t = (float) parte1/v1;
         jLabelTotal.setText(String.format("%.2f", t));
     }
 }

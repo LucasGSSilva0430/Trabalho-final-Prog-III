@@ -26,7 +26,7 @@ public class ControladorJurosSimples {
        int capital = Integer.parseInt(jTextFieldC.getText());
        float taxaJuros = Float.parseFloat(jTextFieldJ.getText());
        int tempo = Integer.parseInt(jTextFieldT.getText());
-       float t = capital * taxaJuros * tempo;
+       float t = (float) capital + (capital * (taxaJuros / 100) * tempo);
        jLabelTotal.setText(String.format("%.2f", t));
    } 
 }

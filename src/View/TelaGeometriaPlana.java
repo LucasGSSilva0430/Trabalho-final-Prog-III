@@ -244,5 +244,4 @@ public class TelaGeometriaPlana extends javax.swing.JPanel {
     public void inicio(){
         c = new ControladorTelaGP(jDesktopPaneGP);
     }
-    
 }

@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.ControladorBhaskara;
+
 /**
  *
  * @author Discentes
@@ -15,6 +17,7 @@ public class TelaBhaskara extends javax.swing.JPanel {
      */
     public TelaBhaskara() {
         initComponents();
+        inicio();
     }
 
     /**
@@ -31,11 +34,12 @@ public class TelaBhaskara extends javax.swing.JPanel {
         jTextFieldA = new javax.swing.JTextField();
         jTextFieldB = new javax.swing.JTextField();
         jButtonCalcular = new javax.swing.JButton();
-        jLabelTotal = new javax.swing.JLabel();
+        jLabelTotal1 = new javax.swing.JLabel();
         jTextFieldC = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabelTotal2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -65,9 +69,10 @@ public class TelaBhaskara extends javax.swing.JPanel {
         jTextFieldB.addActionListener(this::jTextFieldBActionPerformed);
 
         jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
 
-        jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTotal.setText("...");
+        jLabelTotal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTotal1.setText("...");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("A");
@@ -77,6 +82,9 @@ public class TelaBhaskara extends javax.swing.JPanel {
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("C");
+
+        jLabelTotal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTotal2.setText("...");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -90,7 +98,7 @@ public class TelaBhaskara extends javax.swing.JPanel {
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelTotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTotal1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -100,7 +108,8 @@ public class TelaBhaskara extends javax.swing.JPanel {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                                     .addComponent(jTextFieldC, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldB, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(jTextFieldB, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(jLabelTotal2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -121,7 +130,9 @@ public class TelaBhaskara extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jButtonCalcular)
                 .addGap(18, 18, 18)
-                .addComponent(jLabelTotal)
+                .addComponent(jLabelTotal1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelTotal2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -291,6 +302,10 @@ public class TelaBhaskara extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBActionPerformed
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        c.calcular();
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
@@ -318,10 +333,17 @@ public class TelaBhaskara extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelTotal;
+    private javax.swing.JLabel jLabelTotal1;
+    private javax.swing.JLabel jLabelTotal2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextFieldA;
     private javax.swing.JTextField jTextFieldB;
     private javax.swing.JTextField jTextFieldC;
     // End of variables declaration//GEN-END:variables
+    
+    ControladorBhaskara c;
+    public void inicio(){
+        c = new ControladorBhaskara(jLabelTotal1, jLabelTotal2, jTextFieldA, jTextFieldB, jTextFieldC);
+    }
+    
 }

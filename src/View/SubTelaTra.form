@@ -76,7 +76,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelBI">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Base I"/>
+        <Property name="text" type="java.lang.String" value="Base B"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldA">
@@ -87,6 +87,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCalcularActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelTotal">
       <Properties>
@@ -98,7 +101,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelBII">
       <Properties>
-        <Property name="text" type="java.lang.String" value=" Base II"/>
+        <Property name="text" type="java.lang.String" value=" Base b"/>
       </Properties>
     </Component>
   </SubComponents>

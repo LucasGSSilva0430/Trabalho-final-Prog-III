@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -13,18 +14,20 @@ import javax.swing.JTextField;
  */
 public class ControladorFracao {
     JLabel jLabelTotal;
-    JTextField jTextField1, jTextField2;
+    JFormattedTextField jftf1, jftf2;
 
-    public ControladorFracao(JLabel jLabelTotal, JTextField jTextField1, JTextField jTextField2) {
+    public ControladorFracao(JLabel jLabelTotal, JFormattedTextField jftf1, JFormattedTextField jftf2) {
         this.jLabelTotal = jLabelTotal;
-        this.jTextField1 = jTextField1;
-        this.jTextField2 = jTextField2;
+        this.jftf1 = jftf1;
+        this.jftf2 = jftf2;
     }
     
+    
+    
     public void calcular(){
-        int v1 = Integer.parseInt(jTextField1.getText());
-        int v2 = Integer.parseInt(jTextField2.getText());
-        float t = v1/v2;
+        int v1 = Integer.parseInt(jftf1.getText());
+        int v2 = Integer.parseInt(jftf2.getText());
+        float t = (float) v1/v2;
         jLabelTotal.setText(String.format("%.2f", t));
     }
     

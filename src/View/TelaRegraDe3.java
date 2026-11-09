@@ -33,7 +33,6 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jButtonCalcular = new javax.swing.JButton();
-        jLabelTotal = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -50,9 +49,6 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
 
         jButtonCalcular.setText("Calcular");
         jButtonCalcular.addActionListener(this::jButtonCalcularActionPerformed);
-
-        jLabelTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTotal.setText("...");
 
         jTextField3.addActionListener(this::jTextField3ActionPerformed);
 
@@ -78,10 +74,7 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 21, Short.MAX_VALUE)
                         .addComponent(jButtonCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabelTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(57, 57, 57))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,8 +89,6 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
                     .addComponent(jLabel3))
                 .addGap(24, 24, 24)
                 .addComponent(jButtonCalcular)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelTotal)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -197,7 +188,6 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelTotal;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -205,7 +195,7 @@ public class TelaRegraDe3 extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 ControladorRegraDe3 c;
 public void inicio(){
-    c = new ControladorRegraDe3(jTextField1, jTextField2, jTextField3, jLabelTotal);
+    c = new ControladorRegraDe3(jTextField1, jTextField2, jTextField3, jLabel3);
 }
 
 }
